@@ -1,0 +1,438 @@
+@import '_custom-vars.scss';
+
+/*
+
+   CONTENTS
+   ========
+    
+   <nav>
+     Nav ............................ Standard nav w/ dropdown
+
+   <section> 
+     meta ........................... Mostly Typography
+     Hero ........................... Full screen section
+     Flow Text ...................... Paragraph using 'flow text' class 
+     More ........................... Grid of icons & copy
+     Pricing......................... Pricing - panels w/ slide-up effect
+     FAQS ........................... List of collapsable elements
+     Contact ........................ The contact form. Couple text elements.
+
+   <footer>
+     Footer ......................... About the site; social contact info
+
+   Modal ............................ The modal
+   Modular........................... Globally available styles
+
+ 
+ */
+
+
+
+
+
+/*------------------------------------*\
+    #NAV
+\*------------------------------------*/
+
+nav { 
+
+  background-color: $secondary;
+  font-weight: 500;
+  
+}
+
+.dropdown-content .divider { margin: 0 }
+
+.dropdown-content li > a { 
+
+  color: $grey; 
+  
+    :last-of-type { color: $tertiary; }
+    
+}
+
+
+
+
+/*------------------------------------*\
+    #Section META
+\*------------------------------------*/
+
+.section {
+  
+    /*
+     * Don't touch .flow-text because
+     * it has special properties defined by 
+     * materialize.css. All other based in at 18px.
+     */
+    p:not(.flow-text) { font-size: 1.2rem; }
+
+    h2 {
+      color: $primary; 
+      font-weight: bold;
+      margin: 3rem 0 4rem;
+    }
+
+    .btn {
+      background-color: $secondary;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #HERO Section
+\*------------------------------------*/
+
+.section__hero {
+   
+  height: 100vh; // full screen display
+  height: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative; 
+  background-color: #DD5A2B;
+  // linear-gradient(
+  // rgba(154, 29, 205, 0.6),
+  // rgba(154, 29, 205, 0.6)
+  // ),
+
+
+    h3 { color: white; }
+    
+    h5 { 
+      line-height: 2.3rem;
+      color: white;
+     }
+
+    h5 span {
+       border-bottom: 2px solid white; 
+    }
+
+    h1 { 
+      font-weight: bold;
+      font-size: 4.2rem;
+      line-height: 1.10;
+      color: $grey-dark;
+    }
+    
+    .btn { 
+      width: 20rem;
+      margin-top: 1.5rem; 
+    }
+    
+    .gorilla {
+      display: inline-block;
+      height: 330px;
+      background-image: url('../img/gorilla.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+    }
+
+    .btn__main-cta {
+      height: 3rem;
+    }
+} 
+
+@media (max-width: $medium-screen-up) {
+
+  .section__hero { 
+      height: auto; // end use of vh for mobile accessibility. 
+      h1 { font-size: 3.5rem; }
+ }
+
+
+}
+
+
+
+
+/*------------------------------------*\
+    #Flow Text Section
+\*------------------------------------*/
+
+.section__bigflow {
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+    
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #More (Grid) Section 
+\*------------------------------------*/
+
+.section__more-grid {
+  
+    i { color: $grey; }
+
+    h2 { margin: 3rem 0 2rem; } 
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Pricing Section
+\*------------------------------------*/
+
+.section__pricing {
+ 
+
+
+    i { color: $grey-dark; }
+
+    p { 
+      padding: 0.5em 2em;
+      color: white;
+    }
+    
+    .btn:hover { color: white; }
+
+    .btn { 
+      background-color: $secondary-light; 
+      margin-bottom: 2em;
+      color: white;
+      font-weight: bold;
+    }
+
+    .card { 
+      background-color: $secondary; 
+        
+      h2 { 
+        color: white;
+        margin: 2rem 2rem;
+      }
+
+    }
+
+    .card .card-reveal {
+
+      height: 101%;
+
+      p {
+         color: $grey;
+         margin: .5rem 0 .5rem;
+      }
+
+      .card-title { 
+        color: $primary; 
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+
+      @media (max-width: $small-screen) {
+
+        .card-title { font-size: 1.3rem; }
+
+       }
+ 
+      .price {
+        color: #039be5;
+        font-size: 1.3rem;
+      }
+      
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+    #FAQs
+\*------------------------------------*/
+
+.section__faq {
+  
+    .collapsible { box-shadow: none; }
+
+    .collapsible-header p { margin: .5rem 0 .5rem;  }
+}
+
+@media (max-width: $small-screen) {
+  
+    .collapsible-header p.flow-text { margin: 1rem 0;  }
+} 
+
+
+
+
+
+/*------------------------------------*\
+    #Contact
+\*------------------------------------*/
+
+.section__contact {
+
+  background-color: white;
+  padding-bottom: 4rem;
+
+    h5, h4 { color: $secondary; }
+    
+    .card a { color: white; } 
+    
+    .btn i { color: white; }
+
+    form.card { 
+      padding: 1.5rem; border: .35rem solid $secondary;
+    }
+
+    .required { color: $secondary; } 
+    
+    .optional { color: $grey-light; }
+
+    .btn { 
+      background-color: $secondary; 
+      width: 100%;
+    }
+    
+    .hire-notes { 
+      padding: 1rem 3rem;
+      color: $grey;
+    
+  }
+
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Footer 
+\*------------------------------------*/
+
+
+.page-footer {
+
+  background-color: $grey;
+  height: 100vh; 
+  padding: 2rem 0;
+
+
+  p { 
+    color: $grey;
+    font-size: 1.2rem;
+  }
+
+  a {
+
+    color: $primary;
+
+    span {
+      color: $grey;
+    }
+
+  }
+
+
+}
+
+
+@media (max-width: $medium-screen-up) {
+
+  .page-footer { 
+      
+      h5 { margin-top: 2.5rem; }
+ }
+
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Modal 
+\*------------------------------------*/
+
+.modal-content {
+
+    img.matt-picture { width: 100px; }
+
+    strong { color: $primary; }
+
+    h6 { font-size: 1.0rem; }
+
+    a {
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      font-weight: 500;
+    }
+   
+    p { 
+      margin: 1.5rem 1rem 1.5rem 0; 
+      font-size: 1.1rem;
+    }
+
+    h4 { 
+      margin-bottom: 1.5rem;
+      color: $grey-dark;
+      text-align: center;
+    }
+    
+    .about-matt { 
+      color: $grey-dark; 
+      padding-left: 1.5rem;
+    }
+
+    .btn__modal {
+
+      border: none;
+      
+        i { font-size: 1rem; }
+
+    }
+
+    .modal-footer a.btn-flat {
+      height: 3em;
+    }
+
+
+}
+
+@media (max-width: $medium-screen) {
+
+    .matt-picture { display: none; }
+
+  }
+
+
+
+
+
+/*------------------------------------*\
+    #Modular Elements  
+\*------------------------------------*/
+
+.divider {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.strike { text-decoration: line-through; }
+
+.underline { border-bottom: 1px solid $primary; }
+
+.bold { font-weight: 400; }
+
+
