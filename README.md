@@ -1,6 +1,6 @@
 ## Materialize Landing Page 
 
-I created this landing page from scratch for [conversionape.com](http://conversionape.com) using the Materialize Framework (and I quite liked it). 
+I created this conversion-orientated landing page using the Materialize Framework (and I quite liked it). 
 
 Hack away.
 
